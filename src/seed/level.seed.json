@@ -22,9 +22,9 @@
     },
     {
         "type": "platinum",
-        "lowerBoundary": 10000000,
+        "lowerBoundary": 1000000,
         "seed": 0,
         "actualAmount": 1000000,
-        "displayedAmount": 1500000
+        "displayedAmount": 15000000
     }
 ]

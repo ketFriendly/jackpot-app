@@ -5,18 +5,16 @@ const seed = require('./src/seed/seeder')
 
 require('dotenv').config();
 
+
 const app = express();
 
 const port = process.env.PORT || 8081;
 
 routes(app);
 
-
-
 db.sequelize
   .sync({ force: true })
   .then(() =>{ 
-    
     seed();
     console.log('Successful db connection')
   })
