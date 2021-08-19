@@ -3,6 +3,8 @@ module.exports = (sequelize, Sequelize) => {
     uuid: {
       type: Sequelize.UUID,
       primaryKey: true,
+      defaultValue: Sequelize.UUIDV4,
+      allowNull: false
     },
     type: {
       type: Sequelize.STRING,
@@ -13,12 +15,14 @@ module.exports = (sequelize, Sequelize) => {
     seed: {
       type: Sequelize.INTEGER,
     },
+    actualAmount: {
+      type: Sequelize.INTEGER,
+    },
+    displayedAmount: {
+      type: Sequelize.INTEGER,
+    },
   });
-
-  Level.associate = (models) => {
-    Level.belongsTo(models.jackpots, {
-      foreignKey: "UUID",
-    });
-  };
   return Level;
 };
+
+

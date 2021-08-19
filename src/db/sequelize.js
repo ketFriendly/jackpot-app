@@ -19,7 +19,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.jackpots = require('./models/jackpot.model')(sequelize, Sequelize);
+
 db.levels = require("./models/level.model")(sequelize, Sequelize);
 
 module.exports = db;

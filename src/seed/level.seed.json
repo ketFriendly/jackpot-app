@@ -1,0 +1,30 @@
+[
+    {
+        "type": "bronze",
+        "lowerBoundary": 1000,
+        "seed": 0,
+        "actualAmount": 10000,
+        "displayedAmount": 15000
+    },
+    {
+        "type": "silver",
+        "lowerBoundary": 10000,
+        "seed": 0,
+        "actualAmount": 100000,
+        "displayedAmount": 150000
+    },
+    {
+        "type": "gold",
+        "lowerBoundary": 100000,
+        "seed": 0,
+        "actualAmount": 1000000,
+        "displayedAmount": 1500000
+    },
+    {
+        "type": "platinum",
+        "lowerBoundary": 10000000,
+        "seed": 0,
+        "actualAmount": 1000000,
+        "displayedAmount": 1500000
+    }
+]
