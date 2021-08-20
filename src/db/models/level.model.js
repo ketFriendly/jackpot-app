@@ -13,10 +13,10 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.INTEGER,
     },
     seed: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.DECIMAL,
     },
     actualAmount: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.DECIMAL,
     },
     displayedAmount: {
       type: Sequelize.INTEGER,

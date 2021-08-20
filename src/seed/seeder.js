@@ -8,7 +8,11 @@ module.exports =  () =>  {
        await  db.levels.create(level).then(result => console.log(result)).catch(err => console.error(err));
     });
     
-    //add seeder for client/s
+    let clientSeedData = fs.readFileSync(__dirname +'\\client.seed.json',{'encoding':'utf-8'});
+    clientSeedData = JSON.parse(clientSeedData);
+    clientSeedData.forEach(async client => {
+       await  db.clients.create(client).then(result => console.log(result)).catch(err => console.error(err));
+    });
 }
 
 

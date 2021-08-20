@@ -1,14 +1,17 @@
 const express = require('express');
 const routes = require('./routes');
 const db = require('./src/db/sequelize');
-const seed = require('./src/seed/seeder')
+const seed = require('./src/seed/seeder');
+const cors = require('cors');
+
 
 require('dotenv').config();
 
 
 const app = express();
 
-const port = process.env.PORT || 8081;
+app.use(express.json())
+const port = process.env.PORT || 8080;
 
 routes(app);
 

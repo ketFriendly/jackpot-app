@@ -7,10 +7,10 @@ module.exports = (sequelize, Sequelize) => {
         allowNull: false
       },
       moneyIn: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DECIMAL,
       },
       moneyOut: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DECIMAL,
       },
       probabilityForWin: {
         type: Sequelize.INTEGER,
