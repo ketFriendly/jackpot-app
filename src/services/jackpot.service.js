@@ -6,8 +6,9 @@ let clients = [];
 
 const getRandomClient = async () => {
   jackpotLevels = await db.levels.findAll();
+  const displayedJackpotAmounts = jackpotLevels.map(jackpot => jackpot.displayedAmount)
   clients = await db.clients.findAll();
-  return clients[0].uuid; //handle random clients
+  return {clientId: clients[0].uuid, displayedJackpotAmounts}; //handle random clients
 };
 
 const triggerSpin = async (client_server, bet) => {
@@ -61,7 +62,7 @@ const addBetToClientPot = async (client_id, bet) => {
 };
 
 const probability = (n) => {
-  return !!n && Math.random() <= n;
+  return n && Math.random() <= n;
 };
 
 const jackpotWon = (level) => {
@@ -77,7 +78,16 @@ const jackpotWon = (level) => {
   }); */
 };
 
+const forceWin = async (clientId, bet) => {
+  const client = await db.clients.findOne({ where: { uuid: clientId } });
+  const wonAmount = bets[bet];
+  client.moneyOut += wonAmount;
+  client.save();
+  return `You won ${wonAmount}€`;
+};
+
 module.exports = {
   triggerSpin,
   getRandomClient,
+  forceWin,
 };

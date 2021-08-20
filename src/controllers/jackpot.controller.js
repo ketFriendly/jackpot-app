@@ -23,7 +23,21 @@ const spin = async (req, res) => {
   }
 };
 
+const forceWin = async (req, res) => {
+  try {
+    const data = await jackpotService.forceWin(
+      req.body.client_server,
+      req.body.bet
+    );
+    return res.json(data);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({ message: "Something went wrong!" });
+  }
+};
+
 module.exports = {
   spin,
   registerClient,
+  forceWin,
 };
