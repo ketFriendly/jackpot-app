@@ -1,6 +1,7 @@
 const db = require("../db/sequelize");
 const { probabilityForJackpot, bets } = require("../utils/constants");
 
+
 let jackpotLevels = [];
 let clients = [];
 
@@ -86,8 +87,13 @@ const forceWin = async (clientId, bet) => {
   return `You won ${wonAmount}€`;
 };
 
+
 module.exports = {
   triggerSpin,
   getRandomClient,
   forceWin,
+  getLevels: function () {
+    return jackpotLevels
+  }
 };
+

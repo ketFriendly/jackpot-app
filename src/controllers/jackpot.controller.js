@@ -12,9 +12,10 @@ const registerClient = async (req, res) => {
 
 const spin = async (req, res) => {
   try {
+    const bet = parseInt(req.body.bet)
     const data = await jackpotService.triggerSpin(
       req.body.client_server,
-      req.body.bet
+      bet
     );
     return res.json(data);
   } catch (error) {
@@ -25,9 +26,10 @@ const spin = async (req, res) => {
 
 const forceWin = async (req, res) => {
   try {
+    const bet = parseInt(req.body.bet)
     const data = await jackpotService.forceWin(
       req.body.client_server,
-      req.body.bet
+      bet
     );
     return res.json(data);
   } catch (error) {
